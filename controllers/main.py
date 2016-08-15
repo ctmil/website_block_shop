@@ -31,7 +31,7 @@ import base64
 from openerp.tools.translate import _
 
 class block_shop(http.Controller):
-	@http.route(['/shop','/shop/page/<int:page>','/shop/product/<int:page>','/shop/category/<model("product.public.category"):category>','/shop/category/<model("product.public.category"):category>/page/<int:page>'], type='http', auth="public", website=True)
+	@http.route(['/shop','/shop/page/<int:page>','/shop/product/<int:page>','/shop/category/<model("product.public.category"):category>','/shop/category/<model("product.public.category"):category>/page/<int:page>','/shop/product/<model("product.template"):product>'], type='http', auth="public", website=True)
 	def shop(self, page=0, category=None, search='', **post):
 		return request.website.render('website.404')
 
